@@ -137,6 +137,8 @@ module srflipflop(s,r,clk,q,qbar);
 input s,r,clk;
 output q,qbar;
 reg q,qbar;
+initial q=0;
+initial qbar=1;
 always @(posedge clk)
 begin 
 q<=s|(~r&q);
@@ -150,6 +152,8 @@ module jkflipflop(j,k,clk,q,qbar);
 input j,k,clk;
 output q,qbar;
 reg q,qbar;
+initial q=0;
+initial qbar=1;
 always @(posedge clk)
 begin 
 q<=(j&~q)|(~k&q);
@@ -163,6 +167,8 @@ module tflipflop(t,clk,q,qbar);
 input t,clk;
 output q,qbar;
 reg q,qbar;
+initial q=0;
+initial qbar=1;
 always @(posedge clk)
 begin 
 q<=(t&~q)|(~t&q);
@@ -176,6 +182,8 @@ module dflipflop(d,clk,q,qbar);
 input d,clk;
 output q,qbar;
 reg q,qbar;
+initial q=0;
+initial qbar=1;
 always @(posedge clk)
 begin 
 q<=d;
@@ -208,13 +216,19 @@ endmodule
 
 ## TIMING DIGRAMS FOR FLIP FLOPS 
 ### SR Flip Flop
-![td srf (2)](https://github.com/nevil-ferdin/Experiment--05-Implementation-of-flipflops-using-verilog/assets/115524975/35c90e16-43c5-4914-91c6-f18cd9930111)
+
+![image](https://github.com/MukeshVelmurugan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707363/b298fc3b-0a70-4a6e-abf9-a5ce41da9ebb)
 ### JK Flip Flop
-![td jkff](https://github.com/nevil-ferdin/Experiment--05-Implementation-of-flipflops-using-verilog/assets/115524975/46d642fc-7d4b-4cac-8432-3150dac8dcaa)
+
+![image](https://github.com/MukeshVelmurugan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707363/0c8c0c11-e700-48d8-8631-53eb4ed6a764)
 ### T FLIP FLOP
-![td tff](https://github.com/nevil-ferdin/Experiment--05-Implementation-of-flipflops-using-verilog/assets/115524975/cbd70e07-f80f-4ac2-8310-cac2841e9678)
+![image](https://github.com/MukeshVelmurugan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707363/1cb5898b-66d0-49d8-acf7-02a2a7bbebbb)
+
+
 ### D FlipFlop
-![td dff](https://github.com/nevil-ferdin/Experiment--05-Implementation-of-flipflops-using-verilog/assets/115524975/5c342724-dfea-4cb1-8552-ef92f0d6941a)
+![image](https://github.com/MukeshVelmurugan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707363/df3a75a8-a51d-4c45-b68a-e26b0ba61803)
+
+
 
 
 
